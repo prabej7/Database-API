@@ -34,7 +34,7 @@ app.get('/deltedb/:fileName',async(req,res)=>{
     res.send(response);
 });
 
-app.get('/create',()=>{
+app.get('/create',(req,res)=>{
     res.send('CReate');
 })
 
