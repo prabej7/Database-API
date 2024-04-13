@@ -32,6 +32,10 @@ app.get('/readdb/:fileName',async(req,res)=>{
 app.get('/deltedb/:fileName',async(req,res)=>{
     const response = await deleteFile(req.params.fileName + '.json');
     res.send(response);
+});
+
+app.get('/create',()=>{
+    res.send('CReate');
 })
 
 app.listen(5000,()=>{
