@@ -34,15 +34,7 @@ app.get('/deltedb/:fileName',async(req,res)=>{
     res.send(response);
 });
 
-app.get('/create',(req,res)=>{
-    fs.writeFile('name.txt','This is a text',(err)=>{
-        if(err){
-            res.send(err);
-        }else{
-            res.send('File created');
-        }
-    })
-})
+
 
 app.listen(5000,()=>{
     console.log('Server is running at port 5000');
