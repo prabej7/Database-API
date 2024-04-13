@@ -2,7 +2,7 @@ const createFile = require('./FS/create');
 const writeFile = require('./FS/writeFile');
 const readFile = require('./FS/readFile');
 const deleteFile = require('./FS/delete');
-
+const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -35,7 +35,13 @@ app.get('/deltedb/:fileName',async(req,res)=>{
 });
 
 app.get('/create',(req,res)=>{
-    res.send('CReate');
+    fs.writeFile('name.txt','This is a text',(err)=>{
+        if(err){
+            res.send(err);
+        }else{
+            res.send('File created');
+        }
+    })
 })
 
 app.listen(5000,()=>{
